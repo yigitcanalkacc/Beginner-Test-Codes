@@ -1,0 +1,46 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+	 public static void main(String[] args) {
+	
+double armut, elma, domates, muz, patlıcan ;
+double toplam;
+
+double armutkg = 2.14;
+double elmakg = 3.67;
+double domateskg = 1.11;
+double muzkg = 0.95;
+double patlıcankg = 5.00;
+
+	Scanner scanner = new Scanner(System.in);
+
+
+		System.out.println("Armut Kaç Kg : ");
+		armut = scanner.nextDouble();
+		System.out.println("Elma Kaç Kg : ");
+		elma = scanner.nextDouble();
+		System.out.println("Domates Kaç Kg : ");
+		domates = scanner.nextDouble();
+		System.out.println("Muz Kaç Kg : ");
+		muz = scanner.nextDouble();
+		System.out.println("Patlıcan Kaç Kg : ");
+		patlıcan = scanner.nextDouble();
+		
+			
+		
+		toplam = (armut*armutkg) +
+				(elma*elmakg) + 
+				(domates*domateskg) + 
+				(muz*muzkg) + 
+				(patlıcan*patlıcankg) ;
+		
+		System.out.println("Toplam : "+toplam);
+		
+		
+		
+	}
+
+}
