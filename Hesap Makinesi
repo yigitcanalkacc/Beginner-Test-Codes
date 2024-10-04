@@ -1,0 +1,46 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+	 public static void main(String[] args) {
+	
+
+		int sayi1 , sayi2;
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Sayi 1 : ");
+		sayi1 = scanner.nextInt();
+		System.out.println("Sayi 2 : ");
+		sayi2 = scanner.nextInt();
+		
+		System.out.println("Yapmak İstediğiniz İşlemi Seçiniz.");
+		System.out.println(" 1-Toplama\n 2-Çıkarma \n 3-Bölme \n 4-Çarpma ");
+		System.out.println("-------------------------------------------");
+		int toplam = scanner.nextInt();
+
+
+		switch (toplam) {
+		case 1: 
+			toplam = sayi1 + sayi2;
+			break;
+		case 2:
+			toplam = sayi1 - sayi2;
+			break;
+		case 3:
+			toplam = sayi1 / sayi2;
+			break;
+		case 4:
+			toplam = sayi1 * sayi2;
+			break;
+		}
+		
+		System.out.println("Sonuç : "+toplam);
+		
+		
+		
+	}
+
+}
