@@ -1,0 +1,28 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Doğum Yılınızı Giriniz.");
+        int dogumyili = scanner.nextInt();
+
+        if (dogumyili < 0) {
+            System.out.println("Geçerli bir doğum yılı girin.");
+            return;
+        }
+
+        String[] hayvanlar = {
+            "Maymun", "Horoz", "Köpek", "Domuz", "Fare", 
+            "Öküz", "Kaplan", "Tavşan", "Ejderha", 
+            "Yılan", "At", "Koyun"
+        };
+
+        String hayvan = hayvanlar[dogumyili % 12];
+        System.out.println("Çin Zodyağı Burcunuz: " + hayvan);
+    }
+}
