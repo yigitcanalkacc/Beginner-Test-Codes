@@ -1,0 +1,32 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+	 public static void main(String[] args) {
+	
+ double kmucret = 2.20;
+ int mintutar = 20;
+ int acilisucret = 10;
+ int kackm;
+ double toplam;
+ 
+ 
+ Scanner scanner = new Scanner(System.in);
+ 
+
+	System.out.println("Kaç Km Gitti");
+	kackm = scanner.nextInt();
+	
+	if (kackm < mintutar) {
+		System.out.println("Lütfen daha yüksek bir değer giriniz..");
+} else if (kackm > mintutar) {
+	toplam = acilisucret + (kackm * kmucret);
+	System.out.println("Toplam Ücretiniz : "+toplam);
+}
+		
+        
+	}
+
+}
