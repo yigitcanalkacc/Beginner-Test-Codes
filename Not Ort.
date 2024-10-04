@@ -1,0 +1,40 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int mathPuan, fizikPuan, kimyaPuan, turkcePuan, tarihPuan, muzikPuan ;
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Matematik puanını giriniz: ");
+		mathPuan = scan.nextInt();
+		System.out.print("Fizik puanını giriniz: ");
+		fizikPuan = scan.nextInt();
+		
+		System.out.print("Kimya puanını giriniz: ");
+        kimyaPuan = scan.nextInt();
+        
+        System.out.print("Türkçe puanını giriniz: ");
+        turkcePuan = scan.nextInt();
+        
+        System.out.print("Tarih puanını giriniz: ");
+        tarihPuan = scan.nextInt();
+        
+        System.out.print("Müzik puanını giriniz: ");
+        muzikPuan = scan.nextInt();
+        
+        double ortalama = (mathPuan + fizikPuan + kimyaPuan + turkcePuan + tarihPuan + muzikPuan) / 6.0 ;
+        	
+        if (ortalama >= 60) {
+        	System.out.print("Geçtiniz.. ");
+        } else {
+        	System.out.print("Geçemediniz.. ");
+		}
+        
+        
+        
+	}
+
+}
