@@ -1,0 +1,152 @@
+package Main;
+
+import java.lang.classfile.instruction.SwitchCase;
+import java.time.DayOfWeek;
+import java.time.MonthDay;
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args) {
+    
+ 	
+    	int hangitarih;
+    
+    	
+    	Scanner scanner = new Scanner(System.in);
+    	System.out.println("Hangi Ayda Doğdunuz");
+    	System.out.println("Örnek : Ocak,Şubat vs.");
+    	
+    	String ay = scanner.next();
+    	
+    	System.out.println("Doğduğunuz günü Giriniz.");
+    	System.out.println("Örnek : 10, 15, 8");
+    	
+    	int gün = scanner.nextInt();
+    	
+    	
+    	switch (ay) {
+    	case "Ocak" : 
+    		if (gün < 22) {
+    			System.out.println("Oğlak Burcu");
+    		} else {
+				System.out.println("Kova Burcu");
+			}
+    			break;
+    	
+    	case "Şubat" : 
+    		 if (gün < 20) {
+    			 System.out.println("Kova Burcu");
+    		 } else {
+				System.out.println("Balık Burcu");
+			}
+    		 break;
+    		 
+    	case "Mart" :
+    		if (gün < 21) {
+				System.out.println("Balık Burcu");
+			} else {
+				System.out.println("Koç Borcu");
+			}
+    		break;
+    		
+    		
+    		
+    	case "Nisan" :
+    		
+    		if (gün < 21) {
+				System.out.println("Koç Burcu");
+			} else {
+				System.out.println("Boğa Burcu");
+			}
+    		
+    		break;
+    		
+    	case "Mayıs" :
+    		if (gün < 21) {
+				System.out.println("Boğa Burcu");
+			} else {
+				System.out.println("İkizler Burcu");
+			}
+    		
+    		break;
+    	
+    	case "Haziran":
+    		if (gün < 22) {
+				System.out.println("İkizler Burcu");
+			} else {
+				System.out.println("Yengeç Burcu");
+			}
+    	
+    		break;
+    		
+    		
+    	case "Temmuz": 
+    		if (gün < 22) {
+    			System.out.println("Yengeç Burcu");
+    		} else {
+				System.out.println("Aslan Burcu");
+			}
+    		
+    		break;
+    	
+    	case "Ağustos": 
+    		if (gün < 22) {
+    			System.out.println("Aslan Burcu");
+    		} else {
+				System.out.println("Başak Burcu");
+			}
+    		
+    		break;
+    	
+       	case "Eylül": 
+    		if (gün < 22) {
+    			System.out.println("Başak Burcu");
+    		} else {
+				System.out.println("Terazi Burcu");
+			}
+    		
+    		break;
+    		
+    		
+     	case "Ekim": 
+    		if (gün < 22) {
+    			System.out.println("Terazi Burcu");
+    		} else {
+				System.out.println("Akrep Burcu");
+			}
+    		
+    		break;
+    	
+     	case "Kasım": 
+    		if (gün < 21) {
+    			System.out.println("Akrep Burcu");
+    		} else {
+				System.out.println("Yay Burcu");
+			}	
+    		
+    		break;
+    		
+     	case "Aralık": 
+    		if (gün < 21) {
+    			System.out.println("Yay Burcu");
+    		} else {
+				System.out.println("Oğlak Burcu");
+			}		
+    		
+    		break;
+    		
+    		default :
+    			System.out.println("Lütfen Geçerli Bir Ay Giriniz.");
+    			break;
+    		
+    	}
+    	
+    	
+    	
+    	
+        
+        
+}
+    
+}
