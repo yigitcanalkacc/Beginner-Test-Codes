@@ -1,0 +1,38 @@
+package Main;
+
+import java.lang.classfile.instruction.SwitchCase;
+import java.util.Scanner;
+
+public class Test {
+
+	 public static void main(String[] args) {
+		 
+		 int sıcaklık;
+		 
+		 Scanner scanner = new Scanner(System.in);
+		 System.out.println("Sıcaklık Değerine Göre Etkinlik Önerilecektir.");
+		 System.out.println("Lütfen Sıcaklık Değeri Giriniz.");
+		 System.out.println("1-50 Derece Arasında Sıcaklık Girebilirsiniz..");
+		 sıcaklık = scanner.nextInt();
+		 
+	
+		if (sıcaklık <= 5) {
+			System.out.println("Kayak Yapabilirsiniz.");
+		} else if (sıcaklık > 5 && sıcaklık <= 15 ) {
+			System.out.println("Sinemaya Gidebilirsiniz.");
+		} else if (sıcaklık > 15 && sıcaklık <= 25) {
+			System.out.println("Piknik Yapabilirsiniz.");
+		} else if (sıcaklık > 25 && sıcaklık <= 50) {
+			System.out.println("Yüzmeye gidebilirsiniz");
+		} else {
+			System.out.println("Lütfen geçerli bir değer giriniz.");
+		}
+		 
+		
+
+				}
+			
+		}
+		
+	
+
