@@ -1,0 +1,29 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Yıl Giriniz: ");
+        int yil = scanner.nextInt();
+        
+        if (isArtikYil(yil)) {
+            System.out.println(yil + " bir artık yıldır !");
+        } else {
+            System.out.println(yil + " bir artık yıl değildir !");
+        }
+    }
+
+    public static boolean isArtikYil(int yil) {
+        if (yil % 4 == 0) {
+            if (yil % 100 == 0) {
+                return yil % 400 == 0; 
+            }
+            return true; 
+        }
+        return false; 
+    }
+}
