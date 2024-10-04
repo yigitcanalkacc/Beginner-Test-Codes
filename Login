@@ -1,0 +1,60 @@
+package Main;
+
+import java.lang.classfile.instruction.SwitchCase;
+import java.util.Scanner;
+
+public class Test {
+
+	 public static void main(String[] args) {
+	
+String username;
+String password ;
+
+String usernamePW = "admin";
+String passwordPw = "12345";
+
+
+		Scanner scanner = new Scanner(System.in);
+
+	System.out.println("Lütfen Kullanıcı Adınızı Giriniz : ");
+		username = scanner.next();
+	System.out.println("Lütfen Şifrenizi Giriniz : ");	
+		password = scanner.next();
+		
+		while(true) {
+		if (username.equals(usernamePW) && password.equals(passwordPw)) {
+			System.out.println("Giriş Başarılı");
+			break;
+		} else {
+			System.out.println("Hatalı Kullanıcı Adı veya Şifre");
+			System.out.println("Yeniden Şifre Oluşturmak ister misiniz ?");
+			System.out.println(" 1-Evet \n 2-Hayır");
+			
+			String evetorhayir = scanner.next();
+			
+			switch (evetorhayir) {
+			case "1": 
+				System.out.println("Lütfen Yeni Şifrenizi Belirleyiniz : ");
+				String yenisifre = scanner.next();
+				passwordPw = yenisifre;
+				System.out.println("Yeni şifreniz başarıyla oluşturuldu.");
+				
+				break;
+			case "2":
+				System.out.println("Program Sonlandırıldı..");
+				return;
+				
+			  default:
+                  System.out.println("Geçersiz seçenek. Program sonlandırıldı.");
+                  return;
+			
+			}
+		}
+			
+		}
+		
+		scanner.close();
+		
+	}
+
+}
