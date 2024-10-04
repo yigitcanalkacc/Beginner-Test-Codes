@@ -1,0 +1,42 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+    int tutar;
+    double kdvoran = 0.18;
+    double kdvliTutar;
+    double toplam;
+    
+    Scanner scan = new Scanner(System.in);
+    
+    System.out.println("Lütfen Bir Değer Giriniz :");
+    tutar = scan.nextInt();
+    
+    if (tutar > 0 && tutar <= 1000 ) {
+    	
+    	kdvliTutar = tutar * kdvoran;
+    	toplam = tutar + kdvliTutar;
+    	System.out.println("Tutar : "+tutar);
+    	System.out.println("Kdvli Tutar : "+toplam);
+    } else if (tutar > 1000) {
+		
+    	kdvliTutar = tutar * 0.08 ;
+    	toplam = tutar + kdvliTutar;
+    	System.out.println("Yüzde sekiz : "+tutar);
+    	System.out.println("Toplam Yüzde Sekiz : "+toplam);
+	} else {
+		System.out.println("Geçerli Bir değer giriniz. : ");
+	}
+    
+    
+    
+		
+		
+        
+	}
+
+}
