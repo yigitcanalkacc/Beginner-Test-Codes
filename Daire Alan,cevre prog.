@@ -1,0 +1,25 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+	 public static void main(String[] args) {
+	
+ double pi = 3.14;
+ int r;
+ 
+ 
+ Scanner scanner = new Scanner(System.in);
+ System.out.println("Dairenin Yarı Capını giriniz..");
+ r = scanner.nextInt();
+ 
+ double alan = pi * r * r;
+ double cevre = 2 * pi * r;
+ 
+ System.out.println("Dairenin Alanı : "+ alan);
+ System.out.println("Dairenin Cevresi :" + cevre);
+        
+	}
+
+}
