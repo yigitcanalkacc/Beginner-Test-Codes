@@ -1,0 +1,29 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+	 public static void main(String[] args) {
+	
+
+		 double boy;
+		 int kilo;
+		 double kitleindex;
+		 
+		 Scanner scanner = new Scanner(System.in);
+		 
+		 System.out.println("Lütfen Boyunuzu Giriniz : ");
+		 boy = scanner.nextDouble();
+		 System.out.println("Lütfen Kilonuzu Giriniz : ");
+		 kilo = scanner.nextInt();
+		 
+		 
+		 kitleindex = kilo / (boy * boy);
+		 
+		 System.out.println("Vücut Kitle İndexiniz : "+kitleindex);
+		 
+		 
+	}
+
+}
