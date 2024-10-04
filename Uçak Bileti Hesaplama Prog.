@@ -1,0 +1,46 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        int km;
+        int yas;
+        int yolculuktipi;
+        double mesafeucret = 0.10;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Mesafeyi (km) giriniz:");
+        km = scanner.nextInt();
+
+        System.out.println("Yaşınızı giriniz:");
+        yas = scanner.nextInt();
+
+        System.out.println("Yolculuk tipini seçiniz (1-Tek Yön, 2-Gidiş Dönüş):");
+        yolculuktipi = scanner.nextInt();
+
+        double normaltutar = km * mesafeucret;
+        System.out.println("Toplam Normal Ücret: " + normaltutar);
+
+        double indirim = 0;
+        if (yas < 12) {
+            indirim = 0.50;
+        } else if (yas >= 12 && yas <= 24) {
+            indirim = 0.10;
+        } else if (yas > 65) {
+            indirim = 0.30;
+        }
+
+        double indirimlitutar = normaltutar - (normaltutar * indirim);
+
+        if (yolculuktipi == 2) {
+            indirimlitutar = indirimlitutar - (indirimlitutar * 0.20);
+            
+        }
+
+        System.out.println("Toplam İndirimli Ücret: " + indirimlitutar);
+    }
+}
