@@ -1,0 +1,34 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args) {
+    	
+     Scanner scanner = new Scanner(System.in);
+     
+     System.out.print("Basamak Sayısını Giriniz = ");
+     int basamakSayisi = scanner.nextInt();
+     							//basamak sayısı kadar üçgen yapan program
+     
+     
+     for(int i = 0; i < basamakSayisi; i++) {
+    	 	for(int j=0; j < (basamakSayisi - i) ; j++) {
+    	 		System.out.print("0");
+    	 	}
+    	 	
+    	 
+    	 System.out.println();
+     }
+     
+     
+     
+     
+     scanner.close();
+    	
+    	
+    	
+    	
+    }
+}
