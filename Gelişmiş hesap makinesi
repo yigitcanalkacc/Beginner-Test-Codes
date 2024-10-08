@@ -1,0 +1,108 @@
+package Main;
+
+import java.awt.Menu;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Test {
+
+
+	public static int toplama (int a, int b) {
+		int sonuc = 0;
+		sonuc = a + b;
+		return sonuc;
+	}
+	
+	public static int cikarma (int a, int b) {
+		int sonuc = 0;
+		sonuc = a - b;
+		return sonuc;
+	}
+	
+	public static int carpma (int a, int b) {
+		int sonuc = 0;
+		sonuc = a * b;
+		return sonuc;
+	}
+	
+	public static int bolme (int a, int b) {
+		int sonuc = 0;
+		sonuc = a / b;
+		return sonuc;
+	}
+	
+	
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+    	
+    	String [] menux = new String[] {
+    		"1- Toplama İşlemi", "2- Çıkarma İşlemi", "3- Çarpma İşlemi",
+    		"4- Bölme işlemi"
+    	};
+    	
+    	
+        	while (true) {
+       
+    	System.out.println("Lütfen yapmak istediğiniz işlemi seçiniz.");
+  	
+    	for (String menu : menux ) {
+    		
+    		System.out.println(menu);
+    		
+
+    	}
+
+    	System.out.println("=============================================");
+    	System.out.print("Lütfen seçim yapınız : ");
+    	
+    	int secim = scanner.nextInt(); ; 
+    	
+    		if (secim != 1 && secim != 2 && secim != 3 && secim != 4) {
+				System.out.println("Lütfen geçerli bir değer giriniz..");
+				continue;
+			} 
+    	
+    	
+		int sayi1, sayi2;
+		
+		System.out.print("1.Sayı = ");
+		sayi1 = scanner.nextInt();
+		System.out.print("2.Sayı = ");
+		sayi2 = scanner.nextInt();
+		
+			switch (secim) {
+				case 1:
+						System.out.println("=============================================");
+						System.out.println("Toplama sonucunuz : "+ toplama(sayi1, sayi2));
+						System.out.println("=============================================");
+						continue;
+				case 2:
+					System.out.println("=============================================");
+					System.out.println("Çıkarma sonucunuz : "+ cikarma(sayi1, sayi2));
+					System.out.println("=============================================");
+					
+						continue;
+				case 3:
+					System.out.println("=============================================");
+					System.out.println("Çıkarma sonucunuz : "+ carpma(sayi1, sayi2));
+					System.out.println("=============================================");
+						continue;	
+				case 4:
+					System.out.println("=============================================");
+					System.out.println("Çıkarma sonucunuz : "+ bolme(sayi1, sayi2));
+					System.out.println("=============================================");
+						continue;
+					default :
+						System.out.println("Lütfen geçerli bir sayı giriniz..");
+					  break;
+					
+		}
+        	}
+
+        
+
+     
+    }
+}
