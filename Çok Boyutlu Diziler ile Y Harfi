@@ -1,0 +1,54 @@
+package Main;
+
+import java.time.chrono.MinguoChronology;
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class Main {
+
+
+			public static void main(String[] args) {
+				
+			
+			String[] [] yildiz = {
+					
+					{ " " , " " , " ", " ", " "},
+					{ " " , " " , " ", " ", " "},
+					{ " " , " " , " ", " ", " "},
+					{ " " , " " , " ", " ", " "},
+					{ " " , " " , " ", " ", " "},
+					{ " " , " " , " ", " ", " "},
+			};
+
+			
+			yildiz[0][0] = "*";			
+			yildiz[0][4] = "*";
+			yildiz[1][1] = "*";
+			yildiz[1][3] = "*";
+			yildiz[2][2] = "*";                     
+		    yildiz[3][2] = "*";                     
+		    yildiz[4][2] = "*";                     
+		    yildiz[5][2] = "*"; 
+			
+			for(int i =0; i < yildiz.length; i++) {
+				for(int y=0; y < yildiz[i].length; y++) {
+					System.out.print(yildiz[i][y] + " ");
+				}
+				System.out.println();
+			}   
+			
+			
+
+				
+					
+					
+					
+					
+				}
+				
+						
+					}
+				
+
+
+
