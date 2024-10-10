@@ -1,0 +1,86 @@
+package Main;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    private static final int BOYUT = 5; // Oyun alanının boyutu
+    private static final int MAYIN_SAYISI = 5; // Mayın sayısı
+    private static char[][] oyunAlani = new char[BOYUT][BOYUT]; // Oyun alanı
+    private static boolean[][] mayinlar = new boolean[BOYUT][BOYUT]; // Mayınların yerini gösteren dizi
+    private static boolean oyunDevamEdiyor = true; // Oyun durumu
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        initializeOyunAlani();
+        yerleştirMayinlar();
+
+        while (oyunDevamEdiyor) {
+            printOyunAlani();
+            System.out.print("Bir satır ve bir sütun giriniz (örneğin: 1 2): ");
+            int satir = scanner.nextInt();
+            int sutun = scanner.nextInt();
+
+            if (satir < 0 || satir >= BOYUT || sutun < 0 || sutun >= BOYUT) {
+                System.out.println("Geçersiz giriş! Lütfen 0-4 arasında bir değer girin.");
+                continue; // Geçersiz girişse döngünün başına dön
+            }
+
+            if (mayinlar[satir][sutun]) {
+                System.out.println("Mayına bastınız! Oyun bitti.");
+                oyunDevamEdiyor = false;
+            } else {
+                oyunAlani[satir][sutun] = 'O'; // Alanı aç
+                if (checkWin()) {
+                    System.out.println("Tebrikler! Tüm mayınları buldunuz!");
+                    oyunDevamEdiyor = false;
+                }
+            }
+        }
+        printOyunAlani(); // Oyun bittiğinde oyun alanını göster
+        scanner.close(); // Scanner'ı kapat
+    }
+
+    private static void initializeOyunAlani() {
+        for (int i = 0; i < BOYUT; i++) {
+            for (int j = 0; j < BOYUT; j++) {
+                oyunAlani[i][j] = '.'; // Tüm alanları kapalı olarak işaretle
+            }
+        }
+    }
+
+    private static void yerleştirMayinlar() {
+        Random random = new Random();
+        int mayinlarYerleştirildi = 0;
+
+        while (mayinlarYerleştirildi < MAYIN_SAYISI) {
+            int satir = random.nextInt(BOYUT);
+            int sutun = random.nextInt(BOYUT);
+            if (!mayinlar[satir][sutun]) {
+                mayinlar[satir][sutun] = true; // Mayın yerleştir
+                mayinlarYerleştirildi++;
+            }
+        }
+    }
+
+    private static void printOyunAlani() {
+        System.out.println("Oyun Alanı:");
+        for (int i = 0; i < BOYUT; i++) {
+            for (int j = 0; j < BOYUT; j++) {
+                System.out.print(oyunAlani[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    private static boolean checkWin() {
+        for (int i = 0; i < BOYUT; i++) {
+            for (int j = 0; j < BOYUT; j++) {
+                if (!mayinlar[i][j] && oyunAlani[i][j] == '.') {
+                    return false; // Tüm alanlar açılmadı
+                }
+            }
+        }
+        return true; // Tüm alanlar açıldı
+    }
+}
