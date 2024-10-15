@@ -1,0 +1,105 @@
+package Generic;
+
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Main {
+
+	
+	
+	public static void main(String[] args) {
+		
+	Set<Book> books = new TreeSet<>();
+	books.add(new Book("Suç ve Ceza", 150, "Dosteyevski", 2024));
+	books.add(new Book("Sefiller", 366, "Victor Hugo", 2004));	
+	books.add(new Book("Anna", 205, "Husky", 2021));
+	
+	for(Book book : books ) {
+		System.out.println(book.getBookname() + "\t" + book.getBookAuthorname() );
+	}
+	
+	
+	System.out.println("----------------------------------");
+	
+	Set<Book> booksirala = new TreeSet<Book>(new PageToCompable());
+	booksirala.addAll(books);
+	for (Book book : booksirala) {
+		System.out.println(book.getBookPage());
+	}
+	
+	
+	
+	}
+
+
+	
+}
+
+
+
+public class Book implements Comparable<Book> {
+
+	private String bookname;
+	private int bookPage;
+	private String bookAuthorname;
+	private int publishDate;
+	
+	
+	
+	
+	public Book(String bookname, int bookPage, String bookAuthorname, int publishDate) {
+		this.bookname = bookname;
+		this.bookPage = bookPage;
+		this.bookAuthorname = bookAuthorname;
+		this.publishDate = publishDate;
+	}
+
+
+	public String getBookname() {
+		return bookname;
+	}
+
+
+	public int getBookPage() {
+		return bookPage;
+	}
+
+
+
+	public String getBookAuthorname() {
+		return bookAuthorname;
+	}
+
+
+	public int getPublishDate() {
+		return publishDate;
+	}
+
+
+	@Override
+	public int compareTo(Book other) {
+		return this.bookname.compareTo(other.bookname);
+	}
+		
+	
+}
+
+
+
+
+
+package Generic;
+
+import java.util.Comparator;
+
+public class PageToCompable implements Comparator<Book>{
+
+	@Override
+	public int compare(Book o1, Book o2) {
+		return Integer.compare(o1.getBookPage(), o2.getBookPage());
+	}
+	
+	
+	
+
+}
