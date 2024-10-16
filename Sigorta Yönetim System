@@ -1,0 +1,305 @@
+package Insurance;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> bireyselAdresler = new ArrayList<String>();
+		bireyselAdresler.add("İstiklal Caddesi, İstanbul");
+		
+		ArrayList<String> kurumsalAdresler = new ArrayList<String>();
+		kurumsalAdresler.add("Ataşehir, İstanbul");
+		
+		
+		Bireysel bireyselhesaplar = new Bireysel("Ali", "Yılmaz", "ali.yilmaz@hotmail.com", "1234", "Öğretmen", 25, bireyselAdresler, new Date()); 
+		bireyselhesaplar.HesapBilgi();
+		
+		System.out.println("----------------------------------------------------");
+		
+		Kurumsal kurumsalHesap = new Kurumsal("Ayşe", "Demir", "ayse.demir@gmail.com", "1234", "Avukat", 25, kurumsalAdresler, new Date());
+		kurumsalHesap.HesapBilgi();
+		
+	}
+	
+}
+
+package Insurance;
+
+public interface Adres {
+
+	public String getFullAdress();
+	public String getAdressTipi();
+	
+	
+}
+
+package Insurance;
+
+public class AdresManager {
+
+}
+
+package Insurance;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Bireysel extends Hesap {
+
+	public Bireysel(String isim, String soyisim, String email, String password, String meslek, int yas,
+			ArrayList<String> adress, Date lastloginDate) {
+		super(isim, soyisim, email, password, meslek, yas, adress, lastloginDate);
+		
+	}
+
+	@Override
+	public void HesapBilgi() {
+		System.out.println("Bireysel Hesap Bilgileri:");
+        System.out.println("İsim: " + isim);
+        System.out.println("Soyisim: " + soyisim);
+        System.out.println("Email: " + email);
+        System.out.println("Meslek: " + meslek);
+        System.out.println("Yaş: " + yas);
+        System.out.println("Son Giriş Tarihi: " + lastloginDate);
+        System.out.println("Adresler: " + Adress);	
+	}
+
+}
+package Insurance;
+
+public class EvAdres implements Adres {
+
+	private String sokak;
+	private String sehir;
+	private String ilce;
+	private String postaKodu;
+	
+	public EvAdres(String sokak, String sehir, String ilce, String postakodu) {
+		this.sokak = sokak;
+		this.sehir = sehir;
+		this.ilce = ilce;
+		this.postaKodu = postakodu;
+	}
+	 
+
+	@Override
+	public String getFullAdress() {
+		return sokak + " " + sehir + " " + ilce + " " + postaKodu ;
+	}
+
+	@Override
+	public String getAdressTipi() {
+		return "Ev Adresi" ;
+	}
+	
+	
+
+	
+}
+package Insurance;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public abstract class Hesap {
+
+	String isim;
+	String soyisim;
+	String email;
+	String password;
+	String meslek;
+	
+	int yas;
+	ArrayList<String> Adress;
+	
+	Date lastloginDate;
+
+	public Hesap(String isim, String soyisim, String email, String password, String meslek, int yas,
+			ArrayList<String> adress, Date lastloginDate) {
+		this.isim = isim;
+		this.soyisim = soyisim;
+		this.email = email;
+		this.password = password;
+		this.meslek = meslek;
+		this.yas = yas;
+		Adress = adress;
+		this.lastloginDate = lastloginDate;
+	}
+
+	public String getIsim() {
+		return isim;
+	}
+
+	public String getSoyisim() {
+		return soyisim;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getMeslek() {
+		return meslek;
+	}
+
+	public int getYas() {
+		return yas;
+	}
+
+	public ArrayList<String> getAdress() {
+		return Adress;
+	}
+
+	public Date getLastloginDate() {
+		return lastloginDate;
+	}
+	
+	 public abstract void HesapBilgi();
+	
+	
+	
+}
+package Insurance;
+
+public class isAdres implements Adres {
+
+	private String sokak;
+	private String sehir;
+	private String ilce;
+	private String postaKodu;
+	
+	
+	
+	
+	
+	public isAdres(String sokak, String sehir, String ilce, String postaKodu) {
+		this.sokak = sokak;
+		this.sehir = sehir;
+		this.ilce = ilce;
+		this.postaKodu = postaKodu;
+	}
+
+	@Override
+	public String getFullAdress() {
+		return sokak + " " + sehir + " " + ilce + " " + postaKodu ;
+	}
+
+	@Override
+	public String getAdressTipi() {
+		return "İş Adresi" ;
+	}
+
+
+	
+}
+package Insurance;
+
+import java.lang.foreign.AddressLayout;
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Kullanıcı {
+
+	private String adı;
+    private String soyadı;
+    private String email;
+    private String sifre;
+    private String meslek;
+    private int yas;
+    private ArrayList<String> adres;
+    private Date songirisTarih;
+    
+    
+	public Kullanıcı(String adı, String soyadı, String email, String sifre, String meslek, int yas,
+			ArrayList<String> adres, Date songirisTarih) {
+		
+		this.adı = adı;
+		this.soyadı = soyadı;
+		this.email = email;
+		this.sifre = sifre;
+		this.meslek = meslek;
+		this.yas = yas;
+		this.adres = new ArrayList<>();
+		this.songirisTarih = songirisTarih;
+	}
+
+
+	public String getAdı() {
+		return adı;
+	}
+
+
+	public String getSoyadı() {
+		return soyadı;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public String getSifre() {
+		return sifre;
+	}
+
+
+	public String getMeslek() {
+		return meslek;
+	}
+
+
+	public int getYas() {
+		return yas;
+	}
+
+
+	public ArrayList<String> getAdres() {
+		return adres;
+	}
+
+
+	public Date getSongirisTarih() {
+		return songirisTarih;
+	}
+    
+	
+	
+	
+    
+	
+}
+package Insurance;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Kurumsal extends Hesap {
+
+	public Kurumsal(String isim, String soyisim, String email, String password, String meslek, int yas,
+			ArrayList<String> adress, Date lastloginDate) {
+		super(isim, soyisim, email, password, meslek, yas, adress, lastloginDate);
+		
+	}
+
+	@Override
+	public void HesapBilgi() {
+			System.out.println("Kurumsal Hesap Bilgileri:");
+	        System.out.println("Şirket İsim: " + isim);
+	        System.out.println("Yetkili: " + soyisim);
+	        System.out.println("Email: " + email);
+	        System.out.println("Meslek: " + meslek);
+	        System.out.println("Yaş: " + yas);
+	        System.out.println("Son Giriş Tarihi: " + lastloginDate);
+	        System.out.println("Adresler: " + Adress);
+		
+	}
+
+}
